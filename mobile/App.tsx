@@ -1,27 +1,35 @@
-import { StatusBar } from 'expo-status-bar';
-import { useState } from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import React from 'react';
+import { StatusBar } from 'react-native';
+import { 
+    useFonts,
+    Inter_400Regular,
+    Inter_600SemiBold,
+    Inter_700Bold,
+    Inter_900Black
+} from '@expo-google-fonts/inter';
+
+import { Home } from './src/screens/Home';
+import { Loading } from './src/components/Loading';
+import { Background } from './src/components/Background';
+
 
 export default function App() {
-    const [count, setCount] = useState(0);
+    const [fontsLoaded] = useFonts({
+        Inter_400Regular,
+        Inter_600SemiBold,
+        Inter_700Bold,
+        Inter_900Black
+    });
 
     return (
-        <View style={styles.container}>
-            <Text>Open up App.tsx to start working on your app!</Text>
-            <Button
-                title={`Botão ${count}`}
-                onPress={() => setCount(s => s+1)}
+        <Background>
+            <StatusBar
+                barStyle='light-content'
+                backgroundColor='transparent'
+                translucent
             />
-            <StatusBar style="auto" />
-        </View>
+
+            { fontsLoaded ? <Home /> : <Loading /> }
+        </Background>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});
