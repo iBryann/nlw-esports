@@ -23,7 +23,7 @@ export default memo(({ label, list, setSelected }: Props) => (
         </Select.Trigger>
 
         <Select.Portal>
-            <Select.Content className='overflow-hidden bg-white rounded-md shadow-lg'>
+            <Select.Content className='z-[3] overflow-hidden bg-white rounded-md shadow-lg'>
                 <Select.ScrollUpButton className='flex items-center justify-center h-6 bg-white text-zinc-900 cursor-default'>
                     <CaretUp />
                 </Select.ScrollUpButton>
