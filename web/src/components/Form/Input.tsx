@@ -1,17 +1,9 @@
-import React, { InputHTMLAttributes } from 'react';
-
-// import { Container } from './styles';
+import { InputHTMLAttributes, memo } from 'react';
 
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-
-}
-
-export const Input = (props: InputProps) => {
-    return (
-        <input
-            {...props}
-            className='bg-zinc-900 py-3 px-4 rounded text-sm placeholder:text-zinc-500'
-        />
-    );
-}
+export default memo((props: InputHTMLAttributes<HTMLInputElement>) => (
+    <input
+        {...props}
+        className='bg-zinc-900 py-3 px-4 rounded text-sm placeholder:text-zinc-500'
+    />
+));

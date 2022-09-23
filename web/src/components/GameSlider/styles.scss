@@ -1,0 +1,37 @@
+.swiper-games {
+    padding-bottom: 30px;
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        color: #8b5cf6;
+
+        &::after {
+            font-size: 30px;
+            font-weight: 700;
+        }
+    }
+
+    .swiper-scrollbar {
+        background-color: rgba(0, 0, 0, .2);
+        
+        .swiper-scrollbar-drag {
+            background-color: rgb(139, 92, 246, .2);
+        }
+    }
+
+    .swiper-pagination {
+        .swiper-pagination-bullet {
+            background-color: #000;
+            opacity: .2;
+            transition: opacity .2s;
+            
+            &.swiper-pagination-bullet-active {
+                background-color: #8b5cf6;
+            }
+        }
+        
+        &:hover .swiper-pagination-bullet {
+            opacity: 1;
+        }
+    }
+}
